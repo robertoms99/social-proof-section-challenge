@@ -1,0 +1,13 @@
+/*||UTILITY||*/
+
+.mb {
+  margin-bottom: var(--v-gutter);
+
+  &--sm {
+    margin-bottom: var(--v-gutter-small);
+  }
+
+  &--big {
+    margin-bottom: var(--v-gutter-big);
+  }
+}

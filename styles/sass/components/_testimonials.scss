@@ -1,0 +1,67 @@
+/*||TESTIMONIALS||*/
+
+@use '../abstracts/mixins'as *;
+
+
+/*
+1- one row and 3 cols with a small horizontal gutter
+2- single col in small devices
+3- card grid structure with a 2 cols and 2 rows
+4- stair effect
+5- quotes in the paragraph
+*/
+.testimonials {
+  display: grid;
+  grid: auto/repeat(3, 1fr); //1
+  grid-column-gap: var(--h-gutter); //1
+
+  @include responsiveness(40rem) {
+    grid-template-columns: 1fr; //2
+  }
+
+  @include responsiveness(77.2rem) {
+    grid-column-gap: calc(var(--h-gutter) / 2);
+  }
+
+  &__item {
+    padding: 2.5em 2em;
+    background-color: var(--color-primary);
+    border-radius: 5px;
+    display: grid;
+    grid-template: minmax(3.5rem, auto) auto / minmax(3.5rem, 15%) 1fr; //3
+    grid-gap: var(--v-gutter);
+    color: var(--color-white);
+    font-size: .85em;
+
+    &:nth-child(2) {
+      transform: translateY(var(--h-gutter)); //4
+    }
+
+    &:nth-child(3) {
+      transform: translateY(calc(var(--h-gutter) * 2)); //4
+    }
+  }
+
+  &__image {
+    grid-row: 1;
+  }
+
+  &__name {
+    margin-bottom: var(--v-gutter-small);
+  }
+
+  &__description {
+    color: var(--color-secondary);
+    font-size: .85em;
+  }
+
+  &__comment {
+
+    &::before,
+    &::after {
+      content: "\""; //5
+    }
+
+    grid-column: 1/-1;
+  }
+}

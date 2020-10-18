@@ -1,0 +1,20 @@
+/*||CONTAINER||*/
+
+@use '../abstracts/mixins'as *;
+
+.container {
+
+  background: url('/images/bg-pattern-top-desktop.svg') 0 0,
+    url('/images/bg-pattern-bottom-desktop.svg') 100% 100%,
+    var(--color-white);
+  background-size: 30% 40%, 70% 80%;
+  background-repeat: no-repeat;
+  height: 100%;
+  box-shadow: 0 0 8px var(--color-grey-light);
+  padding: 5em 6em;
+  padding-bottom: 7em;
+
+  @include responsiveness(77.2rem) {
+    padding: 20% 10%;
+  }
+}

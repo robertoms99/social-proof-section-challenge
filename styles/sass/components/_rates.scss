@@ -1,0 +1,58 @@
+/*||RATES||*/
+@use '../abstracts/mixins'as *;
+
+/*
+  1-small margin to left to stair effect
+  2- the unique bad practice hahahah
+  2- one column in small devices
+  4- remove the default user-agent appearance
+
+*/
+.rates {
+  &__item {
+    width: 85%;
+    padding: .85em;
+    padding-left: 1.8em;
+    background-color: var(--color-grey-light);
+    border-radius: 7px;
+    display: flex;
+    align-items: center;
+
+    &:not(:last-child) {
+      margin-bottom: 1em;
+    }
+
+    &:nth-child(2) {
+      margin-left: 7.5%; //1
+    }
+
+    &:nth-child(3) {
+      margin-left: 15%; //1
+    }
+
+    @include responsiveness(40rem) {
+      margin-left: 0 !important; //2
+      width: 100%;
+      flex-direction: column; //3
+    }
+  }
+
+  &__description {
+    color: var(--color-primary);
+    font-weight: 700;
+    font-size: .85em;
+    margin-left: 1em;
+
+    @include responsiveness(40rem) {
+      margin-left: 0;
+      margin-top: var(--v-gutter-small);
+    }
+  }
+
+  &__stars {
+    width: 7rem;
+    -moz-appearance: none; //4
+    -webkit-appearance: none; //4
+    background: url('/images/icon-star.svg') 0 50%/17% 75% space no-repeat;
+  }
+}

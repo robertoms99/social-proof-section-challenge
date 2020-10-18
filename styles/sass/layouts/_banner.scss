@@ -1,0 +1,28 @@
+/*||BANNER||*/
+
+@use '../abstracts/mixins'as *;
+
+/*1- Break the flex line in small devices
+2- Help to wrap the flex line
+*/
+.banner {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap; //1
+  align-items: center;
+
+  &__content {
+    width: 45%;
+    min-width: 30.5rem; //2
+
+    @include responsiveness(67.8rem) {
+      min-width: 100%;
+    }
+
+    &--left {
+      @include responsiveness(67.8rem) {
+        margin-bottom: var(--v-gutter-big);
+      }
+    }
+  }
+}

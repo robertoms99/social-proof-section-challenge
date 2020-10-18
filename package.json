@@ -1,0 +1,20 @@
+{
+  "name": "social-proof-section",
+  "version": "1.0.0",
+  "description": "![Design preview for the Social proof section coding challenge](./design/desktop-preview.jpg)",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build:sass": "sass ./styles/sass/app.scss:./styles/app.css --style compressed --watch"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/robertal99/Social-proof-section.git"
+  },
+  "author": "Robert Molina",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/robertal99/Social-proof-section/issues"
+  },
+  "homepage": "https://github.com/robertal99/Social-proof-section#readme"
+}

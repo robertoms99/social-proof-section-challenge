@@ -1,0 +1,60 @@
+@use './mixins'as *;
+
+/*||GLOBALS RESETS||*/
+
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+/*1-base for rem multiplicator*/
+html {
+  font-size: 62.5%; //1
+  --color-primary: hsl(300, 43%, 22%);
+  --color-secondary: hsl(333, 80%, 67%);
+  --color-primary-light: hsl(303, 10%, 53%);
+  --color-grey-light: hsl(300, 24%, 96%);
+  --color-white: hsl(0, 0%, 100%);
+  --v-gutter: 1em;
+  --v-gutter-big: calc(var(--v-gutter) * 3);
+  --v-gutter-small: calc(var(--v-gutter) * 0.5);
+  --h-gutter: 1.5em;
+}
+
+/*1-alternative box model*/
+
+body {
+  background-image: linear-gradient(to right top, var(--color-primary-light), hsl(35, 75%, 85%));
+  box-sizing: border-box; //1
+  color: var(--color-primary-light);
+  display: flex;
+  padding: 0 10%;
+  justify-content: center;
+  align-items: center;
+  font: 1.5rem 'Spartan', sans-serif;
+  min-height: 100vh;
+
+  @include responsiveness(77.2rem) {
+    padding: 0;
+  }
+}
+
+/*1- line-heights for all paragraphs*/
+p {
+  line-height: 1.5; //1;
+}
+
+/*1- remove marker for unordered and ordered lists items*/
+ul,
+ol {
+  list-style-type: none //1;
+}
+
+/*1- remove user agent text-decoration and color*/
+a {
+  text-decoration: none; //1
+  color: inherit //1;
+}

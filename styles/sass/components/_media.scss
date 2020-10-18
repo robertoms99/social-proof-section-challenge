@@ -1,0 +1,21 @@
+/*||MEDIA||*/
+
+/*
+1- size object in the content box' parent
+2- for rounded images
+*/
+.media {
+  overflow: hidden;
+
+  &--rounded {
+    border-radius: 50%; //2
+  }
+
+  &__object {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; //1
+    display: block;
+  }
+
+}
