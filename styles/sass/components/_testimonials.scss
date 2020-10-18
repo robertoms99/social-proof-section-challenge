@@ -32,6 +32,11 @@
     grid-gap: var(--v-gutter);
     color: var(--color-white);
     font-size: .85em;
+    transition: transform 200ms;
+
+    &:hover {
+      transform: translateY(-5px);
+    }
 
     &:nth-child(2) {
       transform: translateY(var(--h-gutter)); //4
